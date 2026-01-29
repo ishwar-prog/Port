@@ -6,8 +6,8 @@ import BackgroundVideo from './backgroundVideo.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BackgroundVideo>
+    {/* <BackgroundVideo> */}
     <App />
-    </BackgroundVideo>
+    {/* </BackgroundVideo> */}
   </StrictMode>,
 )
