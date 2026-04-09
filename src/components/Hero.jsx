@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import gsap from 'gsap';
-import ScrambleText from './ScrambleText';
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import ScrambleText from "./ScrambleText";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -12,7 +12,7 @@ const Hero = () => {
       gsap.fromTo(
         lineRef.current,
         { scaleX: 0 },
-        { scaleX: 1, duration: 1.5, ease: "power4.inOut", delay: 0.5 }
+        { scaleX: 1, duration: 1.5, ease: "power4.inOut", delay: 0.5 },
       );
     }, heroRef);
 
@@ -64,7 +64,7 @@ const Hero = () => {
         <motion.div variants={itemVariants} className="mb-4">
           <h1 className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-bold leading-none tracking-tighter">
             <ScrambleText
-              texts={['ISHWAR', 'ईश्वर', 'イシュワル']}
+              texts={["ISHWAR", "ईश्वर", "イシュワル"]}
               className="text-white"
             />
           </h1>
@@ -79,7 +79,8 @@ const Hero = () => {
         {/* Subtitle */}
         <motion.div variants={itemVariants}>
           <p className="text-xl md:text-2xl lg:text-3xl text-white/70 font-light tracking-wide">
-            Full-Stack Developer & <span className="text-[#FF4500]">Autodidaxy</span> in Agentic AI
+            Full-Stack Developer &{" "}
+            <span className="text-[#FF4500]">Autodidaxy</span> in Agentic AI
           </p>
         </motion.div>
 
@@ -93,11 +94,17 @@ const Hero = () => {
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             className="flex flex-col items-center gap-2"
           >
-            <span className="text-white/40 text-sm tracking-widest uppercase">Scroll</span>
+            <span className="text-white/40 text-sm tracking-widest uppercase">
+              Scroll
+            </span>
             <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2">
               <motion.div
                 animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="w-1.5 h-1.5 bg-[#FF4500] rounded-full"
               />
             </div>
