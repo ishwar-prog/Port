@@ -1,52 +1,54 @@
-import React, { useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { ExternalLink, Github, Globe } from 'lucide-react';
+import React, { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { ExternalLink, Github, Globe } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: 'Streamora',
-    description: 'A comprehensive video streaming platform with advanced backend architecture',
-    image: '/project1.png',
-    website: 'https://streamoraa.onrender.com/',
-    github: 'https://github.com/ishwar-prog/Grand-Backend',
-    tags: ['Node.js', 'Express', 'MongoDB', 'React'],
+    title: "Streamora",
+    description:
+      "A comprehensive video streaming platform with advanced backend architecture",
+    image: "/project1.png",
+    website: "https://streamoraa.onrender.com/",
+    github: "https://github.com/ishwar-prog/Grand-Backend",
+    tags: ["Node.js", "Express", "MongoDB", "React"],
   },
   {
     id: 2,
-    title: 'GSAP Showcase',
-    description: 'Interactive animations and smooth scroll experiences with GSAP',
-    image: '/project2.png',
-    website: 'https://gsap1-project.onrender.com/',
-    github: 'https://github.com/ishwar-prog/Gsap-Project',
-    tags: ['GSAP', 'JavaScript', 'CSS3', 'Animations'],
+    title: "GSAP Showcase",
+    description:
+      "Interactive animations and smooth scroll experiences with GSAP",
+    image: "/project2.png",
+    website: "https://gsap1-project.onrender.com/",
+    github: "https://github.com/ishwar-prog/Gsap-Project",
+    tags: ["GSAP", "JavaScript", "CSS3", "Animations"],
   },
   {
     id: 3,
-    title: 'Modi vs Rahul',
-    description: 'A Redux-powered interactive comparison application',
-    image: '/project3.png',
-    website: 'https://modi-rahul.vercel.app/',
-    github: 'https://github.com/ishwar-prog/Redux-Project',
-    tags: ['React', 'Redux', 'Tailwind', 'Vercel'],
+    title: "Modi vs Rahul",
+    description: "A Redux-powered interactive comparison application",
+    image: "/project3.png",
+    website: "https://modi-rahul.vercel.app/",
+    github: "https://github.com/ishwar-prog/Redux-Project",
+    tags: ["React", "Redux", "Tailwind", "Vercel"],
   },
   {
     id: 4,
-    title: 'DisasterIQ',
-    description: 'Intelligent disaster management and response system',
-    image: '/project4.png',
-    website: 'https://disasteriq.onrender.com/',
-    github: 'https://github.com/ishwar-prog/Singularity-Final',
-    tags: ['AI/ML', 'Node.js', 'React', 'MongoDB'],
+    title: "DisasterIQ",
+    description: "Intelligent disaster management and response system",
+    image: "/project4.png",
+    website: "https://disasteriq.onrender.com/",
+    github: "https://github.com/ishwar-prog/Singularity-Final",
+    tags: ["AI/ML", "Node.js", "React", "MongoDB"],
   },
   {
     id: 5,
-    title: 'Reboxed',
-    description: 'Innovative hackathon project with modern tech stack',
-    image: '/project5.png',
-    website: 'https://reboxed.onrender.com/',
-    github: 'https://github.com/ishwar-prog/hackios',
-    tags: ['Full-Stack', 'Innovation', 'Hackathon'],
+    title: "Reboxed",
+    description: "Innovative hackathon project with modern tech stack",
+    image: "/project5.png",
+    website: "https://reboxed.onrender.com/",
+    github: "https://github.com/ishwar-prog/hackios",
+    tags: ["Full-Stack", "Innovation", "Hackathon"],
   },
 ];
 
@@ -63,7 +65,7 @@ const ProjectCard = ({ project, index }) => {
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    
+
     setRotateX((y - centerY) / 20);
     setRotateY((centerX - x) / 20);
   };
@@ -86,7 +88,7 @@ const ProjectCard = ({ project, index }) => {
       onMouseLeave={handleMouseLeave}
       style={{
         transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-        transformStyle: 'preserve-3d',
+        transformStyle: "preserve-3d",
       }}
       className="group relative"
       data-cursor-hover
@@ -94,12 +96,12 @@ const ProjectCard = ({ project, index }) => {
       <div className="relative bg-[#1a1a1a] rounded-3xl overflow-hidden border border-white/10 transition-all duration-500 group-hover:border-[#FF4500]/50">
         {/* Image container */}
         <div className="relative h-64 overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-gradient-to-br from-[#FF4500]/20 to-[#303030] flex items-center justify-center"
-          >
-            <span className="text-6xl font-bold text-white/10">{project.title[0]}</span>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#FF4500]/20 to-[#303030] flex items-center justify-center">
+            <span className="text-6xl font-bold text-white/10">
+              {project.title[0]}
+            </span>
           </div>
-          
+
           {/* Overlay on hover */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -141,7 +143,7 @@ const ProjectCard = ({ project, index }) => {
             </h3>
             <ExternalLink className="w-5 h-5 text-white/30 group-hover:text-[#FF4500] transition-colors" />
           </div>
-          
+
           <p className="text-white/60 mb-4 line-clamp-2">
             {project.description}
           </p>
@@ -163,9 +165,10 @@ const ProjectCard = ({ project, index }) => {
         <motion.div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none"
           style={{
-            background: 'linear-gradient(105deg, transparent 40%, rgba(255, 69, 0, 0.1) 45%, rgba(255, 69, 0, 0.2) 50%, rgba(255, 69, 0, 0.1) 55%, transparent 60%)',
-            transform: isHovered ? 'translateX(100%)' : 'translateX(-100%)',
-            transition: 'transform 0.6s ease-in-out',
+            background:
+              "linear-gradient(105deg, transparent 40%, rgba(255, 69, 0, 0.1) 45%, rgba(255, 69, 0, 0.2) 50%, rgba(255, 69, 0, 0.1) 55%, transparent 60%)",
+            transform: isHovered ? "translateX(100%)" : "translateX(-100%)",
+            transition: "transform 0.6s ease-in-out",
           }}
         />
       </div>
@@ -178,7 +181,10 @@ const Projects = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="min-h-screen py-32 px-6 md:px-16 lg:px-32 relative">
+    <section
+      id="projects"
+      className="min-h-screen py-32 px-6 md:px-16 lg:px-32 relative"
+    >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#FF4500]/5 rounded-full blur-3xl" />
@@ -200,7 +206,8 @@ const Projects = () => {
             My Work
           </h2>
           <p className="text-white/50 text-lg mt-4 max-w-2xl">
-            A selection of projects that showcase my skills in full-stack development and creative problem-solving
+            A selection of projects that showcase my skills in full-stack
+            development and creative problem-solving
           </p>
         </motion.div>
 
