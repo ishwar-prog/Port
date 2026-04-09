@@ -1,23 +1,68 @@
-import React, { useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 const techStack = [
-  { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-  { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-  { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-  { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
-  { name: 'Express', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
-  { name: 'GitLab', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg' },
-  { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-  { name: 'Supabase', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg' },
-  { name: 'Postman', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg' },
-  { name: 'GSAP', logo: 'https://cdn.worldvectorlogo.com/logos/gsap-greensock.svg' },
-  { name: 'Cloudinary', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudinary/cloudinary-original.svg' },
-  { name: 'NPM', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg' },
-  { name: 'Vercel', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg' },
-  { name: 'Cursor', logo: 'https://www.cursor.com/favicon.ico' },
+  {
+    name: "TypeScript",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+  {
+    name: "JavaScript",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "Node.js",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  },
+  {
+    name: "React",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+  },
+  {
+    name: "Express",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  },
+  {
+    name: "GitLab",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg",
+  },
+  {
+    name: "GitHub",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  },
+  {
+    name: "MongoDB",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  },
+  {
+    name: "Supabase",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
+  },
+  {
+    name: "Postman",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+  },
+  {
+    name: "GSAP",
+    logo: "https://cdn.worldvectorlogo.com/logos/gsap-greensock.svg",
+  },
+  {
+    name: "Cloudinary",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudinary/cloudinary-original.svg",
+  },
+  {
+    name: "NPM",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
+  },
+  {
+    name: "Vercel",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+  },
+  { name: "Cursor", logo: "https://www.cursor.com/favicon.ico" },
 ];
 
 const StarButton = ({ tech }) => {
@@ -52,7 +97,7 @@ const StarButton = ({ tech }) => {
           background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 69, 0, 0.3) 0%, transparent 60%)`,
         }}
       />
-      
+
       {/* Star particles */}
       {isHovered && (
         <>
@@ -63,58 +108,62 @@ const StarButton = ({ tech }) => {
               <motion.div
                 key={i}
                 className="absolute w-1 h-1 bg-[#FF4500] rounded-full"
-                initial={{ 
-                  opacity: 0, 
+                initial={{
+                  opacity: 0,
                   scale: 0,
                   x: mousePosition.x,
-                  y: mousePosition.y 
+                  y: mousePosition.y,
                 }}
-                animate={{ 
-                  opacity: [0, 1, 0], 
+                animate={{
+                  opacity: [0, 1, 0],
                   scale: [0, 1.5, 0],
                   x: mousePosition.x + offsetX,
                   y: mousePosition.y + offsetY,
                 }}
-                transition={{ 
-                  duration: 0.8, 
+                transition={{
+                  duration: 0.8,
                   delay: i * 0.1,
                   repeat: Infinity,
-                  repeatDelay: 0.5
+                  repeatDelay: 0.5,
                 }}
               />
             );
           })}
         </>
       )}
-      
+
       {/* Card content */}
       <div className="relative bg-[#1a1a1a] border border-white/10 rounded-2xl p-6 flex flex-col items-center gap-4 overflow-hidden transition-all duration-300 group-hover:border-[#FF4500]/50 group-hover:bg-[#1a1a1a]/80">
         {/* Tech logo */}
         <div className="w-16 h-16 flex items-center justify-center">
-          <img 
-            src={tech.logo} 
+          <img
+            src={tech.logo}
             alt={tech.name}
             className="w-12 h-12 object-contain filter group-hover:drop-shadow-[0_0_8px_rgba(255,69,0,0.5)] transition-all duration-300"
           />
         </div>
-        
+
         {/* Tech name */}
         <span className="text-white/80 text-sm font-medium tracking-wide group-hover:text-white transition-colors">
           {tech.name}
         </span>
-        
+
         {/* Shine effect */}
         <motion.div
           className="absolute inset-0 opacity-0 group-hover:opacity-100"
           initial={false}
-          animate={isHovered ? {
-            background: [
-              'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
-            ],
-            x: ['-100%', '100%'],
-          } : {}}
+          animate={
+            isHovered
+              ? {
+                  background: [
+                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)",
+                  ],
+                  x: ["-100%", "100%"],
+                }
+              : {}
+          }
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          style={{ backgroundSize: '200% 100%' }}
+          style={{ backgroundSize: "200% 100%" }}
         />
       </div>
     </motion.div>
@@ -150,7 +199,10 @@ const TechStack = () => {
   };
 
   return (
-    <section id="tech" className="min-h-screen py-32 px-6 md:px-16 lg:px-32 relative">
+    <section
+      id="tech"
+      className="min-h-screen py-32 px-6 md:px-16 lg:px-32 relative"
+    >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-[#FF4500]/3 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
