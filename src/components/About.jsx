@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 import {
   motion,
   useMotionTemplate,
   useScroll,
   useTransform,
-} from 'framer-motion';
+} from "framer-motion";
 
 const About = () => {
   const targetRef = useRef(null);
@@ -15,9 +15,13 @@ const About = () => {
   // 3D perspective animation values
   const yMotionValue = useTransform(scrollYProgress, [0, 1], [500, 0]);
   const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], [35, 15, 0]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.3, 0.7, 0.9, 1]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.7, 1],
+    [0.3, 0.7, 0.9, 1],
+  );
   const scale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
-  
+
   const transform = useMotionTemplate`rotateX(${rotateX}deg) translateY(${yMotionValue}px) translateZ(50px) scale(${scale})`;
 
   const paragraphs = [
@@ -73,13 +77,13 @@ const About = () => {
       <div
         className="sticky top-0 h-screen mx-auto flex items-center justify-center overflow-hidden"
         style={{
-          transformStyle: 'preserve-3d',
-          perspective: '1000px',
+          transformStyle: "preserve-3d",
+          perspective: "1000px",
         }}
       >
         <motion.div
           style={{
-            transformStyle: 'preserve-3d',
+            transformStyle: "preserve-3d",
             transform,
             opacity,
           }}
@@ -97,10 +101,10 @@ const About = () => {
                 key={index}
                 className={`text-lg md:text-xl lg:text-2xl leading-relaxed text-center max-w-4xl mx-auto ${
                   para.highlight
-                    ? 'text-white font-semibold text-xl md:text-2xl lg:text-3xl'
+                    ? "text-white font-semibold text-xl md:text-2xl lg:text-3xl"
                     : para.accent
-                    ? 'text-[#FF4500] italic font-light mt-8'
-                    : 'text-white/70 font-light'
+                      ? "text-[#FF4500] italic font-light mt-8"
+                      : "text-white/70 font-light"
                 }`}
               >
                 {para.text}
